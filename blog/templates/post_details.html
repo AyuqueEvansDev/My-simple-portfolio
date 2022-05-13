@@ -1,6 +1,18 @@
-<h1>Post</h1>
-<h2>{{posts.title}}</h2>
-<h3>{{posts.date}}</h3>
-<p>{{posts.description|safe}}</p>
-<img src="{{posts.image.url}}" alt=">{{posts.image}}"></img>
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2>{{posts.title}}</h2>
+        <h3 class="my-2 h5 text-muted">{{posts.date|date:'F jS Y'}}</h3>
+
+        <img src="{{posts.image.url}}" alt=">{{posts.image}}"></img>
+
+    <div class="my-4">
+        <p>{{posts.description|safe}}</p>
+    </div>
+</div>
+
+
+{% endblock %}
 
